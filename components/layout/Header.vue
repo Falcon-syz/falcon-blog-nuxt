@@ -1,49 +1,53 @@
 <template>
-<div style="background:rgb(52, 58, 64)">
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" style="margin-right: 80px" href="#">Falcon</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active mx-3">
-            <a class="nav-link" href="#"
-              >博客 <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item mx-3">
-            <a class="nav-link" href="#">问答</a>
-          </li>
-          <li class="nav-item mx-3">
-            <a class="nav-link" href="#">标签</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
-      </div>
-    </nav>
-  </div>
-</div>
+  <div style="background: rgb(52, 58, 64)">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" style="margin-right: 80px" href="#">Falcon</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active mx-3">
+              <a class="nav-link" href="#"
+                >博客 <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="#">问答</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="#">标签</a>
+            </li>
+          </ul>
 
+          <a-button ghost style="margin-right: 20px"> 登录 </a-button>
+          <a-dropdown placement="bottomCenter">
+            <a-avatar icon="user" size="large" />
+            <a-menu slot="overlay">
+              <a-menu-item>
+                <a href="javascript:;">1st menu item</a>
+              </a-menu-item>
+              <a-menu-item>
+                <a href="javascript:;">2nd menu item</a>
+              </a-menu-item>
+              <a-menu-item>
+                <a href="javascript:;">3rd menu item</a>
+              </a-menu-item>
+            </a-menu>
+          </a-dropdown>
+        </div>
+      </nav>
+    </div>
+  </div>
 </template>
 
 <script>
