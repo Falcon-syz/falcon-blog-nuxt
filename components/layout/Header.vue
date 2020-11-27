@@ -1,53 +1,51 @@
 <template>
-  <div style="background: rgb(52, 58, 64)">
+  <nav
+    ref="navHead"
+    class="navbar navbar-expand-lg fixed-top navbar-dark my-navbar"
+    :class="{ scrollStyle: isScroll }"
+  >
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" style="margin-right: 80px" href="#">Falcon</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active mx-3">
-              <a class="nav-link" href="#"
-                >博客 <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="#">问答</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="#">标签</a>
-            </li>
-          </ul>
+      <a class="navbar-brand" style="margin-right: 80px" href="#">Falcon</a>
 
-          <a-button ghost style="margin-right: 20px"> 登录 </a-button>
-          <a-dropdown placement="bottomCenter">
-            <a-avatar icon="user" size="large" />
-            <a-menu slot="overlay">
-              <a-menu-item>
-                <a href="javascript:;">1st menu item</a>
-              </a-menu-item>
-              <a-menu-item>
-                <a href="javascript:;">2nd menu item</a>
-              </a-menu-item>
-              <a-menu-item>
-                <a href="javascript:;">3rd menu item</a>
-              </a-menu-item>
-            </a-menu>
-          </a-dropdown>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active mx-3">
+            <a class="nav-link" href="#"
+              >博客 <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="#">问答</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="#">标签</a>
+          </li>
+        </ul>
+        <div class="nav-right">
+          <a-tooltip placement="bottom">
+            <template slot="title"> 搜索 </template>
+            <a-icon type="search" style="margin-right: 1rem" />
+          </a-tooltip>
+          <a-tooltip placement="bottom">
+            <template slot="title"> 最近搜索记录 </template>
+            <a-icon type="history" />
+          </a-tooltip>
         </div>
-      </nav>
+      </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -78,16 +76,59 @@ export default {
   components: {},
   props: {},
   data() {
-    return {};
+    return {
+      isScroll: false,
+      navHeight: 0,
+    };
   },
   computed: {},
   watch: {},
   created() {},
-  mounted() {},
+  mounted() {
+    this.navHeight = this.$refs["navHead"].offsetHeight;
+    window.addEventListener("scroll", this.handleScroll);
+  },
   updated() {},
-  methods: {},
+  destroyed() {
+    document.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      //获取滚动时的高度
+      let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      // let oneHeight = this.$refs["navHead"].$el.offsetHeight;
+      let oneHeight = this.navHeight;
+
+      if (scrollTop > oneHeight) {
+        //这是滑动到scrollTwo的距离要做的操作
+        this.isScroll = true;
+      }
+      if (scrollTop <= oneHeight) {
+        //这是滑动到scrollTwo的距离要做的操作
+        this.isScroll = false;
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
+.nav-right {
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.my-navbar {
+  transition: all 0.5s;
+  background-color: transparent;
+  padding: 18px 12px;
+}
+.scrollStyle {
+  background: rgba(2, 10, 18, 0.8) !important;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
 </style>

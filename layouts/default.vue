@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Header></Header>
-    <Nuxt />
+    <Header ref="header"></Header>
+      <Nuxt :style="{paddingTop:navHeight+'px'}"/>
     <Footer></Footer>
     <a-back-top>
       <div class="ant-back-top-inner">UP</div>
@@ -18,11 +18,22 @@ export default {
     Header,
     Footer,
   },
+  data() {
+    return {
+      navHeight:0
+    }
+  },
+  mounted() {
+    this.navHeight = this.$refs['header'].$refs["navHead"].offsetHeight
+  },
 };
 </script>
 
-<style  scoped>
-.ant-back-top-inner{
+<style>
+.anticon{
+transform: translateY(-.2rem);
+}
+.ant-back-top-inner {
   height: 40px;
   width: 40px;
   line-height: 40px;

@@ -14,12 +14,14 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    'ant-design-vue/dist/antd.css'
+    'ant-design-vue/dist/antd.css',
+    '@/assets/css/global.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '@/plugins/antd-ui'
+    '@/plugins/antd-ui',
+    { src: './directive/zoom-animation', ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
