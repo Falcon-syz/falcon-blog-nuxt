@@ -7,6 +7,7 @@
 + Nuxt.js 创建服务端渲染 (SSR) 应用 https://zh.nuxtjs.org/
 + AntD Vue 前端ui框架 https://element.eleme.io
 + Bootstrap 响应式组件库 https://v4.bootcss.com/
++ anime.js 动画特效库 https://github.com/juliangarnier/anime/
 + Axios 前端HTTP框架 https://github.com/axios/axios
 + Highlight.js 代码语法高亮插件 https://github.com/highlightjs/highlight.js
 + mavon-editor Markdown编辑器 https://github.com/nhn/tui.editor
