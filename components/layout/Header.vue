@@ -115,7 +115,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="less">
+@media screen and(max-width: 812px) {
+  .my-navbar {
+    background-color: rgba(2, 10, 18, 0.8) !important;
+  }
+}
 .nav-right {
   color: #fff;
   font-size: 1.1rem;

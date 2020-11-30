@@ -33,35 +33,43 @@
 export default {
   components: {},
   props: {},
-  data () {
-    return {
-    
-    }
+  data() {
+    return {};
   },
   computed: {},
   watch: {},
-  created(){},
-  mounted(){},
-  updated(){},
-  methods: {}
-}
+  created() {},
+  mounted() {},
+  updated() {},
+  methods: {},
+};
 </script>
 
-<style scoped>
+<style scoped lang="less">
+@media screen and(max-width: 812px) {
+  .hoverContainer {
+    height: 22rem !important;
+  }
+  .hoverInnerContainer {
+    margin-top: 20px;
+    height: 10rem !important;
+    margin-bottom: 0 !important;
+  }
+}
 .hoverInnerContainer {
   width: 100%;
   height: 19.35rem;
   overflow: hidden;
   position: relative;
-  border-radius: 6px;
-  margin-bottom:20px;
+  border-radius: 0.8rem;
+  margin-bottom: 20px;
 }
 .hoverContainer {
   width: 100%;
   height: 40rem;
   overflow: hidden;
   position: relative;
-  border-radius: 6px;
+  border-radius: 0.8rem;
 }
 .hoverZoom {
   height: 100%;
@@ -70,12 +78,16 @@ export default {
   left: 50%;
   transition: all 0.5s;
   transform: translate(-50%, -50%);
+  &:hover {
+    height: 105% !important;
+    -webkit-filter: brightness(90%); /* Chrome, Safari, Opera */
+    filter: brightness(90%);
+  }
 }
-.hoverZoom:hover {
-  height: 105% !important;
-}
+
 .main {
   background-color: rgb(22, 30, 39);
   color: #fff;
+  padding-bottom:40px;
 }
 </style>
