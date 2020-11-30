@@ -29,18 +29,23 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less">
 .anticon{
 transform: translateY(-.2rem);
 }
 .ant-back-top-inner {
+  transition: all .5s;
   height: 40px;
   width: 40px;
   line-height: 40px;
   border-radius: 4px;
-  background-color: #1088e9;
-  color: #fff;
+  background-color: rgb(35, 42, 49);
+  color: rgb(109, 118, 133);
   text-align: center;
   font-size: 20px;
+  &:hover{
+    background-color: rgb(17, 24, 31);
+    color:#fff;
+  }
 }
 </style>

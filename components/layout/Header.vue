@@ -5,7 +5,7 @@
     :class="{ scrollStyle: isScroll }"
   >
     <div class="container">
-      <a class="navbar-brand" style="margin-right: 80px" href="#">Falcon</a>
+      <a class="navbar-brand" style="margin-right: 80px" href="#"><span style="transform: translateY(-3px);display: block;">FALCON</span></a>
 
       <button
         class="navbar-toggler"
@@ -31,6 +31,25 @@
           </li>
           <li class="nav-item mx-3">
             <a class="nav-link" href="#">标签</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
           </li>
         </ul>
         <div class="nav-right">
@@ -116,9 +135,22 @@ export default {
 </script>
 
 <style scoped lang="less">
+.navbar-brand{
+  display: block;
+  padding: 5px 20px;
+  border-radius: .3rem;
+  background: rgb(133, 9, 9);
+  font-family: 'logoFont';
+  font-size:1.5rem;
+  letter-spacing:5px
+}
 @media screen and(max-width: 812px) {
+  .navbar-brand{
+  font-size:1.2rem !important;
+}
   .my-navbar {
     background-color: rgba(2, 10, 18, 0.8) !important;
+    padding:20px 12px
   }
 }
 .nav-right {
@@ -129,7 +161,8 @@ export default {
 .my-navbar {
   transition: all 0.5s;
   background-color: transparent;
-  padding: 18px 12px;
+  padding: 20px 12px 25px 12px;
+  font-size: 0.95rem;
 }
 .scrollStyle {
   background: rgba(2, 10, 18, 0.8) !important;
