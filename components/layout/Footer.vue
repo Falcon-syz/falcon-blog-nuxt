@@ -1,62 +1,147 @@
 <template>
-  <div>
-    <svg class="wave-top" width="100%"  viewBox="0 0 1200 250">
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M0 108.306L50 114.323C100 120.34 200 132.374 300 168.476C400 204.578 500 264.749 600 246.698C700 228.647 800 132.374 900 108.306C1000 84.2382 1100 132.374 1150 156.442L1200 180.51V-8.5451e-06H1150C1100 -8.5451e-06 1000 -8.5451e-06 900 -8.5451e-06C800 -8.5451e-06 700 -8.5451e-06 600 -8.5451e-06C500 -8.5451e-06 400 -8.5451e-06 300 -8.5451e-06C200 -8.5451e-06 100 -8.5451e-06 50 -8.5451e-06H0V108.306Z"
-        fill="rgb(22, 30, 39)"
-      />
-    </svg>
-    <div style="height:150px;text-align:center">
-123
+  <div class="globle-footer">
+    <div class="container">
+      <a-row :gutter="{ xs: 0, lg: 100 }">
+        <a-col :lg="{ span: 12 }" :xs="{ span: 24 }">
+          <h6 class="title-bar">关于</h6>
+          <p style="font-size: 0.875rem; line-height: 1.8">
+            2020年洛阳师范学院毕业，前端程序员。干饭能手。没在好大的公司任过职。博客更新全凭心情。没有多大抱负。安心做条咸鱼。<br />
+            <span class="icon-link">
+              <a
+                href="https://www.antdv.com"
+                class="link-style"
+                target="_blank"
+              >
+                <a-icon type="github"
+              /></a>
+              <a href="https://www.antdv.com" class="link-style" target="_blank"
+                ><a-icon type="weibo-circle"
+              /></a>
+              <a href="https://www.antdv.com" class="link-style" target="_blank"
+                ><a-icon type="wechat"
+              /></a>
+            </span>
+          </p>
+        </a-col>
+        <a-col :lg="{ span: 12 }" :xs="{ span: 24 }">
+          <a-row :gutter="50">
+            <a-col :lg="{ span: 12 }" :xs="{ span: 24 }">
+              <h6 class="title-bar m-t20">社交媒体</h6>
+              <p style="font-size: 0.875rem">
+                <a
+                  :href="item.url"
+                  v-for="(item, index) in linkList"
+                  :key="index"
+                  target="_blank"
+                  class="link-style"
+                  >{{ item.name }}</a
+                >
+              </p>
+            </a-col>
+            <a-col :lg="{ span: 12 }" :xs="{ span: 24 }">
+              <h6 class="title-bar m-t20">导航</h6>
+              <p style="font-size: 0.875rem">
+                <a
+                  href="https://www.antdv.com"
+                  target="_blank"
+                  class="link-style"
+                  >老版本入口</a
+                >
+              </p>
+            </a-col>
+          </a-row>
+        </a-col>
+      </a-row>
     </div>
+    <a-divider />
+    <a-row>
+      <a-col>
+        <div class="container">
+          Copyright © 2020 孙亚铮的独立博客. 豫ICP备20007499号
+        </div>
+      </a-col>
+    </a-row>
   </div>
 </template>
 
 <script>
-const wave1 =
-    "M0 108.306L50 114.323C100 120.34 200 132.374 300 168.476C400 204.578 500 264.749 600 246.698C700 228.647 800 132.374 900 108.306C1000 84.2382 1100 132.374 1150 156.442L1200 180.51V0H1150C1100 0 1000 0 900 0C800 0 700 0 600 0C500 0 400 0 300 0C200 0 100 0 50 0H0V108.306Z",
-  wave2 =
-    "M0 250L50 244.048C100 238.095 200 226.19 300 226.19C400 226.19 500 238.095 600 232.143C700 226.19 800 202.381 900 196.429C1000 190.476 1100 202.381 1150 208.333L1200 214.286V0H1150C1100 0 1000 0 900 0C800 0 700 0 600 0C500 0 400 0 300 0C200 0 100 0 50 0H0V250Z",
-  wave3 =
-    "M0 250L50 238.095C100 226.19 200 202.381 300 166.667C400 130.952 500 83.3333 600 101.19C700 119.048 800 202.381 900 214.286C1000 226.19 1100 166.667 1150 136.905L1200 107.143V0H1150C1100 0 1000 0 900 0C800 0 700 0 600 0C500 0 400 0 300 0C200 0 100 0 50 0H0V250Z",
-  wave4 =
-    "M0 125L50 111.111C100 97.2222 200 69.4444 300 97.2222C400 125 500 208.333 600 236.111C700 263.889 800 236.111 900 229.167C1000 222.222 1100 236.111 1150 243.056L1200 250V0H1150C1100 0 1000 0 900 0C800 0 700 0 600 0C500 0 400 0 300 0C200 0 100 0 50 0H0V125Z";
 export default {
   head: {
-    script: [
-      {
-        src: "https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js",
-      },
-    ],
+    script: [],
   },
   components: {},
   props: {},
   data() {
-    return {};
+    return {
+      linkList: [
+        {
+          name: "YouTube",
+          url: "https://www.antdv.com",
+        },
+        {
+          name: "哔哩哔哩",
+          url: "https://www.antdv.com",
+        },
+        {
+          name: "Instagram",
+          url: "https://www.antdv.com",
+        },
+        {
+          name: "新浪微博",
+          url: "https://www.antdv.com",
+        },
+      ],
+    };
   },
   computed: {},
   watch: {},
   created() {},
-  mounted() {
-    anime({
-      targets: ".wave-top > path",
-      easing: "linear",
-      duration: 20000,
-      loop: true,
-      d: [
-        { value: [wave1, wave2] },
-        { value: wave3 },
-        { value: wave4 },
-        { value: wave1 },
-      ],
-    });
-  },
+  mounted() {},
   updated() {},
   methods: {},
 };
 </script>
 
-<style scoped>
+<style scoped lang="less">
+/deep/.ant-divider {
+  background: rgb(35, 42, 49);
+}
+@media screen and (max-width: 812px) {
+  .m-t20 {
+    margin-top: 20px;
+  }
+}
+.icon-link {
+  font-size: 24px;
+}
+.title-bar {
+  position: relative;
+  padding-left: 10px;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 15px;
+    background: rgb(241, 35, 73);
+  }
+  color: #fff;
+  font-size: 0.9375rem;
+  letter-spacing: 5px;
+}
+.link-style {
+  margin-right: 10px;
+  text-decoration: none;
+  color: rgb(109, 118, 133);
+  transition: all 0.5s;
+  &:hover {
+    color: #fff;
+  }
+}
+.globle-footer {
+  padding: 40px 10px;
+  background: rgb(22, 30, 39);
+  color: rgb(109, 118, 133);
+}
 </style>

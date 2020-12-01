@@ -30,16 +30,18 @@
           style="margin-bottom: 20px"
         >
           <div class="card">
-            <img
-              src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2330346801,1817524984&fm=26&gp=0.jpg"
-              class="card-img-top coverHover"
-              alt="..."
-            />
+            <nuxt-link :to="`/article/${item.id}`" target="_blank">
+              <img
+                src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2330346801,1817524984&fm=26&gp=0.jpg"
+                class="card-img-top coverHover"
+                alt="..."
+              />
+            </nuxt-link>
             <div class="card-body">
-              <span>{{item.archive}}</span>
-              <h6 class="card-title">{{item.title}}</h6>
+              <span>{{ item.archive }}</span>
+              <h6 class="card-title">{{ item.title }}</h6>
               <p class="card-text">
-                {{item.createTime}}
+                {{ item.createTime }}
               </p>
             </div>
           </div>
@@ -136,7 +138,6 @@ export default {
 .home-body {
   padding-top: 2rem;
   background: #fff;
-  height: 1000px;
 }
 .coverHover {
   cursor: pointer;
