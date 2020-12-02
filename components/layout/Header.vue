@@ -160,9 +160,9 @@ export default {
   letter-spacing: 5px;
 }
 @media screen and(max-width: 812px) {
-  .top-bac{
-    display: none;
-  }
+  // .top-bac{
+  //   display: none;
+  // }
   .navbar-brand {
     font-size: 1.2rem !important;
   }

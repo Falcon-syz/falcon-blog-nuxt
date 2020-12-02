@@ -1,31 +1,34 @@
 <template>
-  <div
-    style="height: 1500px"
-    :style="
-      $route.query.tp === '1' ? { backgroundColor: 'rgb(22, 30, 39)' } : {}
-    "
-  >
-    <div :class="{ container: $route.query.tp === '1' }">
-      <a-row>
-        <a-col
-          :span="24"
-          :class="
-            $route.query.tp === '1'
-              ? { 'media-box2': true }
-              : { 'media-box1': true }
-          "
-          style="position: relative"
-        >
-          <div
-            class="media-content"
-            :style="`background-image: url('${data.cover}');`"
-          ></div>
-        </a-col>
+  <div>
+    <div
+      :style="
+        $route.query.tp === '1' ? { backgroundColor: 'rgb(22, 30, 39)' } : {}
+      "
+    >
+      <div class="header-style" :class="{ container: $route.query.tp === '1' }">
+        <a-row>
+          <a-col
+            :span="24"
+            :class="
+              $route.query.tp === '1'
+                ? { 'media-box2': true }
+                : { 'media-box1': true }
+            "
+            style="position: relative"
+          >
+            <div
+              class="media-content"
+              :style="`background-image: url('${data.cover}');`"
+            ></div>
+          </a-col>
+        </a-row>
+      </div>
+    </div>
 
-         <a-col
-          :span="24"
-        >
-          <div v-html="data.content" style="overflow:hidden"></div>
+    <div class="container">
+      <a-row>
+        <a-col :span="24">
+          <div v-html="data.content"></div>
         </a-col>
       </a-row>
     </div>
@@ -49,7 +52,6 @@ export default {
   head() {
     return {
       title: this.data.title, // 浏览器中的标题
-      // title: "文章详情", // 浏览器中的标题
     };
   },
   props: {},
@@ -86,7 +88,7 @@ export default {
     // 通过文章id查询所有评论列表信息
     // const {data: commentList} = await app.$getCommentListByArticleId(params.id)
     // return { data, commentList }
-    data.cover ="https://static.is26.com/blog/2020/07/tibet/t-135.JPG";
+    data.cover = "https://static.is26.com/blog/2020/07/tibet/t-135.JPG";
     return { data };
   },
 };
@@ -100,6 +102,12 @@ export default {
   .media-box2 {
     height: 240px !important;
   }
+  .header-style {
+    padding: 20px 0 !important;
+  }
+}
+.header-style {
+  padding: 40px 0 20px 0;
 }
 .media-box1 {
   height: 317px;

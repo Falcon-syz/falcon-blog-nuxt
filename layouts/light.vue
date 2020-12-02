@@ -2,11 +2,21 @@
   <div>
     <LightHeader></LightHeader>
     <div class="container">
-      <a-row>
+      <a-row :gutter="{ lg: 30, xs: 0 }">
         <a-col :lg="{ span: 18 }" :xs="{ span: 24 }">
           <Nuxt />
         </a-col>
-        <a-col :lg="{ span: 6 }" :xs="{ span: 0 }"> 465465465 </a-col>
+        <a-col :lg="{ span: 6 }" :xs="{ span: 0 }">
+          <div style="padding: 40px 0 20px 0">
+            <p style="color: #232a31; font-size: 0.875rem; letter-spacing: 5px">
+              搜索&nbsp;/&nbsp;SEARCH
+            </p>
+            <a-divider />
+            <p>
+              <a-input-search size="large" placeholder="搜点什么吧..." />
+            </p>
+          </div>
+        </a-col>
       </a-row>
     </div>
     <Footer></Footer>
@@ -82,5 +92,10 @@ export default {
     background-color: rgb(17, 24, 31);
     color: #fff;
   }
+}
+/deep/.ant-input {
+  border: none;
+  background: rgb(244, 244, 245);
+  border-radius: 5px;
 }
 </style>
