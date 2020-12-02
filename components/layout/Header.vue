@@ -1,70 +1,77 @@
 <template>
-  <nav
-    ref="navHead"
-    class="navbar navbar-expand-lg fixed-top navbar-dark my-navbar"
-    :class="{ scrollStyle: isScroll }"
-  >
-    <div class="container">
-      <a class="navbar-brand" style="margin-right: 80px" href="#"><span style="transform: translateY(-3px);display: block;">FALCON</span></a>
+  <div>
+    <nav
+      ref="navHead"
+      class="navbar navbar-expand-lg fixed-top navbar-dark my-navbar"
+      :class="{ scrollStyle: isScroll }"
+    >
+      <div class="container">
+        <a class="navbar-brand" style="margin-right: 80px" href="#"
+          ><span style="transform: translateY(-3px); display: block"
+            >FALCON</span
+          ></a
+        >
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active mx-3">
-            <a class="nav-link" href="#"
-              >博客 <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item mx-3">
-            <a class="nav-link" href="#">问答</a>
-          </li>
-          <li class="nav-item mx-3">
-            <a class="nav-link" href="#">标签</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-        <div class="nav-right">
-          <a-tooltip placement="bottom">
-            <template slot="title"> 搜索 </template>
-            <a-icon type="search" style="margin-right: 1rem" />
-          </a-tooltip>
-          <a-tooltip placement="bottom">
-            <template slot="title"> 最近搜索记录 </template>
-            <a-icon type="history" />
-          </a-tooltip>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active mx-3">
+              <a class="nav-link" href="#"
+                >博客 <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="#">问答</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="#">标签</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+          <div class="nav-right">
+            <a-tooltip placement="bottom">
+              <template slot="title"> 搜索 </template>
+              <a-icon type="search" style="margin-right: 1rem" />
+            </a-tooltip>
+            <a-tooltip placement="bottom">
+              <template slot="title"> 最近搜索记录 </template>
+              <a-icon type="history" />
+            </a-tooltip>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+    <div class="top-bac"></div>
+  </div>
 </template>
 
 <script>
@@ -135,22 +142,33 @@ export default {
 </script>
 
 <style scoped lang="less">
-.navbar-brand{
+.top-bac {
+  position: absolute;
+  width: 100%;
+  height: 91px;
+  top: 0;
+  left: 0;
+  background: rgb(22, 30, 39);
+}
+.navbar-brand {
   display: block;
   padding: 5px 20px;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   background: rgb(133, 9, 9);
-  font-family: 'logoFont';
-  font-size:1.5rem;
-  letter-spacing:5px
+  font-family: "logoFont";
+  font-size: 1.5rem;
+  letter-spacing: 5px;
 }
 @media screen and(max-width: 812px) {
-  .navbar-brand{
-  font-size:1.2rem !important;
-}
+  .top-bac{
+    display: none;
+  }
+  .navbar-brand {
+    font-size: 1.2rem !important;
+  }
   .my-navbar {
     background-color: rgba(2, 10, 18, 0.8) !important;
-    padding:20px 12px
+    padding: 20px 12px;
   }
 }
 .nav-right {

@@ -10,7 +10,7 @@
       </a-row>
     </div>
     <Footer></Footer>
-    <a-back-top >
+    <div class="my-fixed">
       <div class="ant-back-top-inner hiden">
         <a-icon type="heart" style="transform: translateY(-5px)" />
       </div>
@@ -20,6 +20,9 @@
           style="transform: translateY(-5px); font-size: 24px"
         />
       </div>
+    </div>
+
+    <a-back-top>
       <div class="ant-back-top-inner">UP</div>
     </a-back-top>
   </div>
@@ -47,9 +50,9 @@ export default {
     display: none;
   }
   /deep/.ant-back-top {
-  right: 20px !important;
-  bottom: 50px !important;
-}
+    right: 20px !important;
+    bottom: 50px !important;
+  }
 }
 /deep/.ant-back-top {
   right: 25px;
@@ -58,6 +61,12 @@ export default {
 .anticon {
   transform: translateY(-0.2rem);
 }
+.my-fixed {
+  position: fixed;
+  right: 20px;
+  bottom: 65%;
+}
+
 .ant-back-top-inner {
   margin-top: 5px;
   transition: all 0.5s;

@@ -30,7 +30,7 @@
           style="margin-bottom: 20px"
         >
           <div class="card">
-            <nuxt-link :to="`/article/${item.id}`" target="_blank">
+            <nuxt-link :to="`/article/${item.id}?tp=${item.type}`" target="_blank">
               <img
                 src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2330346801,1817524984&fm=26&gp=0.jpg"
                 class="card-img-top coverHover"
