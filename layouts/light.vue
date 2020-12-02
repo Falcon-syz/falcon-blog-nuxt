@@ -35,15 +35,18 @@
     <a-back-top>
       <div class="ant-back-top-inner">UP</div>
     </a-back-top>
+<BottomActions></BottomActions>
   </div>
 </template>
 
 <script>
+import BottomActions from "@/components/layout/BottomActions";
 import LightHeader from "@/components/layout/LightHeader";
 import Footer from "@/components/layout/Footer";
 
 export default {
   components: {
+    BottomActions,
     LightHeader,
     Footer,
   },

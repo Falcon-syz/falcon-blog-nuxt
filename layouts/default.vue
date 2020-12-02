@@ -6,15 +6,19 @@
     <a-back-top>
       <div class="ant-back-top-inner">UP</div>
     </a-back-top>
+    <BottomActions></BottomActions>
   </div>
 </template>
 
 <script>
+import BottomActions from "@/components/layout/BottomActions";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export default {
   components: {
+    BottomActions,
     Header,
     Footer,
   },
