@@ -6,6 +6,17 @@
       "
     >
       <div class="header-style" :class="{ container: $route.query.tp === '1' }">
+        <a-row style="margin-bottom:10px" v-show="$route.query.tp === '1'">
+          <a-col>
+            <div>
+              <h1 class="head-title">{{ data.title }}</h1>
+              <p class="head-p">
+                {{ data.author.name }} &nbsp;{{ data.createTime }}&nbsp;
+                {{ data.archive }}&nbsp;{{ data.view }} &nbsp;{{ data.like }}
+              </p>
+            </div>
+          </a-col>
+        </a-row>
         <a-row>
           <a-col
             :span="24"
@@ -61,7 +72,11 @@ export default {
   computed: {},
   watch: {},
   created() {},
-  mounted() {},
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.finish();
+    });
+  },
   updated() {},
   methods: {},
   async asyncData({ params, app }) {
@@ -95,6 +110,20 @@ export default {
 </script>
 
 <style scoped>
+.head-p {
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.head-title {
+  color: #fff;
+  font-size: 1.875rem;
+  line-height: 1.5;
+  font-weight: 500;
+  text-align: center;
+}
 @media screen and (max-width: 812px) {
   .media-box1 {
     height: 160px !important;
@@ -103,7 +132,7 @@ export default {
     height: 240px !important;
   }
   .header-style {
-    padding: 20px 0 !important;
+    padding: 20px 10px !important;
   }
 }
 .header-style {
