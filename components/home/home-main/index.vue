@@ -11,11 +11,19 @@
           >
             <span class="archive-title">{{ item.title }}</span>
             <div class="hoverInnerContainer">
+               <nuxt-link
+              :to="{
+                name: 'archive',
+                query: { arc: item.id },
+              }"
+              target="_blank"
+            >
               <img
                 class="hoverZoom"
                 src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3655212573,3518083758&fm=26&gp=0.jpg"
                 alt=""
               />
+               </nuxt-link>
             </div>
           </a-col>
         </a-row>

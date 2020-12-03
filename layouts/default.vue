@@ -6,7 +6,7 @@
     <a-back-top>
       <div class="ant-back-top-inner">UP</div>
     </a-back-top>
-    <BottomActions></BottomActions>
+    <BottomActions v-if="$route.query.tp"></BottomActions>
   </div>
 </template>
 

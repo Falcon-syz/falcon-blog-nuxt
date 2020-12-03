@@ -6,7 +6,7 @@
       :class="{ scrollStyle: isScroll }"
     >
       <div class="container">
-        <a class="navbar-brand" style="margin-right: 80px" href="#"
+        <a class="navbar-brand" style="margin-right: 80px" href="/"
           ><span style="transform: translateY(-3px); display: block"
             >FALCON</span
           ></a
@@ -32,10 +32,10 @@
               >
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="#">问答</a>
+              <a class="nav-link" href="#">留言</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="#">标签</a>
+              <a class="nav-link" href="#">关于</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -71,10 +71,12 @@
       </div>
     </nav>
     <div class="top-bac"></div>
+    <SearchModal></SearchModal>
   </div>
 </template>
 
 <script>
+import SearchModal from '../search-modal'
 export default {
   head: {
     script: [
@@ -99,7 +101,9 @@ export default {
       },
     ],
   },
-  components: {},
+  components: {
+    SearchModal
+  },
   props: {},
   data() {
     return {
