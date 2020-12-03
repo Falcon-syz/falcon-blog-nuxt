@@ -34,6 +34,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.ant-back-top {
+bottom:70px;
+}
 .anticon{
 transform: translateY(-.2rem);
 }

@@ -1,4 +1,5 @@
 <template>
+<transition name="slide-fade">
   <div id="bottomBox" class="box-bottom" v-show="isShowBottom">
     <div class="action-btn">
       <a-icon type="heart" />
@@ -7,16 +8,19 @@
       <a-icon type="share-alt" />
     </div>
   </div>
+</transition>
 </template>
 
 <script>
+import { isMobile } from "@/utils/common.js";
+
 export default {
   components: {},
   props: {},
   data() {
     return {
       scrollHeight: 0,
-      isShowBottom:false
+      isShowBottom: false,
     };
   },
   computed: {},
@@ -36,11 +40,13 @@ export default {
       var scroll = scrollTop - this.scrollHeight;
       this.scrollHeight = scrollTop;
       if (scroll < 0) {
-        console.log("up");
-        this.isShowBottom=true
+        if (isMobile()) {
+          this.isShowBottom = true;
+        }
       } else {
-        console.log("down");
-        this.isShowBottom=false
+         if (isMobile()) {
+          this.isShowBottom = false;
+        }
       }
     },
   },
@@ -48,6 +54,9 @@ export default {
 </script>
 
 <style scoped lang="less">
+.slide-fade-enter-active {transition: all .2s ease;}
+.slide-fade-leave-active {transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);}
+.slide-fade-enter, .slide-fade-leave-to{transform: translateY(58px);}
 .box-bottom {
   transition: all 0.5s;
   position: fixed;
@@ -62,7 +71,8 @@ export default {
   .action-btn {
     flex: 1;
     text-align: center;
-    font-size: 20px;
+    line-height: 50px;
+    font-size: 24px;
   }
 }
 </style>

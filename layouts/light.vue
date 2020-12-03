@@ -4,38 +4,55 @@
     <div class="container">
       <a-row :gutter="{ lg: 30, xs: 0 }">
         <a-col :lg="{ span: 18 }" :xs="{ span: 24 }">
-          <Nuxt />
+          <Nuxt ref="nuxtComponent" />
         </a-col>
         <a-col :lg="{ span: 6 }" :xs="{ span: 0 }">
-          <div style="padding: 40px 0 20px 0">
+          <div
+            style="padding: 40px 0 20px 0"
+            :class="{ 'scroll-fix-top': isFixed }"
+          >
             <p style="color: #232a31; font-size: 0.875rem; letter-spacing: 5px">
               搜索&nbsp;/&nbsp;SEARCH
             </p>
-            <a-divider />
+            <a-divider class="divider-my"></a-divider>
             <p>
               <a-input-search size="large" placeholder="搜点什么吧..." />
             </p>
           </div>
+          <div>&nbsp;</div>
         </a-col>
       </a-row>
     </div>
     <Footer></Footer>
     <div class="my-fixed">
-      <div class="ant-back-top-inner hiden">
-        <a-icon type="heart" style="transform: translateY(-5px)" />
-      </div>
-      <div class="ant-back-top-inner hiden">
-        <a-icon
-          type="share-alt"
-          style="transform: translateY(-5px); font-size: 24px"
-        />
-      </div>
+      <a-badge :count="likeCount" class="hiden">
+        <a-tooltip placement="left">
+          <template slot="title">
+            <span>点个赞</span>
+          </template>
+          <div class="ant-back-top-inner">
+            <a-icon type="heart" style="transform: translateY(-5px)" />
+          </div>
+        </a-tooltip>
+      </a-badge>
+
+      <a-tooltip placement="left">
+        <template slot="title">
+          <span>分享本文</span>
+        </template>
+        <div class="ant-back-top-inner hiden">
+          <a-icon
+            type="share-alt"
+            style="transform: translateY(-5px); font-size: 24px"
+          />
+        </div>
+      </a-tooltip>
     </div>
 
     <a-back-top>
       <div class="ant-back-top-inner">UP</div>
     </a-back-top>
-<BottomActions></BottomActions>
+    <BottomActions></BottomActions>
   </div>
 </template>
 
@@ -51,20 +68,46 @@ export default {
     Footer,
   },
   data() {
-    return {};
+    return {
+      likeCount: 0,
+      isFixed: false,
+    };
   },
-  mounted() {},
+  mounted() {
+    // console.log(this.$refs['nuxtComponent'].$children[0].data.like)
+    this.likeCount = this.$refs["nuxtComponent"].$children[0].data.like;
+    window.addEventListener("scroll", this.handleScroll, true);
+  },
+  methods: {
+    handleScroll() {
+      // 页面滚动距顶部距离
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      if (scrollTop >= 78) {
+        this.isFixed = true;
+      } else {
+        this.isFixed = false;
+      }
+    },
+  },
 };
 </script>
 
 <style lang="less" scoped>
+.scroll-fix-top {
+  width: 300px;
+  position: fixed;
+  top: 0;
+}
 @media screen and(max-width: 812px) {
   .hiden {
     display: none;
   }
   /deep/.ant-back-top {
     right: 20px !important;
-    bottom: 50px !important;
+    bottom: 70px !important;
   }
 }
 /deep/.ant-back-top {
@@ -100,5 +143,17 @@ export default {
   border: none;
   background: rgb(244, 244, 245);
   border-radius: 5px;
+}
+.divider-my {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 2px;
+    background: rgb(17, 24, 31);
+  }
 }
 </style>

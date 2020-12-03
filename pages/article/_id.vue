@@ -6,7 +6,7 @@
       "
     >
       <div class="header-style" :class="{ container: $route.query.tp === '1' }">
-        <a-row style="margin-bottom:10px" v-show="$route.query.tp === '1'">
+        <a-row style="margin-bottom: 10px" v-show="$route.query.tp === '1'">
           <a-col>
             <div>
               <h1 class="head-title">{{ data.title }}</h1>
@@ -33,10 +33,39 @@
             ></div>
           </a-col>
         </a-row>
+        <a-row v-show="$route.query.tp === '0'">
+          <a-col :span="24">
+            <h1 style="font-size: 1.875rem; line-height: 1.5">
+              {{ data.title }}
+            </h1>
+            <a-row>
+              <a-col :xs="4" :lg="2">
+                <a-avatar :src="data.author.avatar" icon="user" size="large" />
+              </a-col>
+              <a-col :xs="20" :lg="19">
+                <div>
+                  {{ data.author.name }}
+                </div>
+                <div>
+                  {{ data.createTime }} &nbsp; 发布在 {{ data.archive }}
+                </div>
+              </a-col>
+              <a-col
+                :xs="{ span: 0 }"
+                :lg="{ span: 3 }"
+                style="line-height: 42px"
+              >
+                <span><a-icon type="eye" /> {{ data.view }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> <a-icon type="heart" />&nbsp;{{ data.like }}</span>
+              </a-col>
+            </a-row>
+          </a-col>
+        </a-row>
+        <a-divider v-show="$route.query.tp === '0'"></a-divider>
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" :style="$route.query.tp === '1'?{paddingTop:'40px'}:{}">
       <a-row>
         <a-col :span="24">
           <div v-html="data.content"></div>
@@ -110,6 +139,9 @@ export default {
 </script>
 
 <style scoped>
+.anticon {
+  transform: translateY(-0.2rem);
+}
 .head-p {
   text-align: center;
   color: #fff;
