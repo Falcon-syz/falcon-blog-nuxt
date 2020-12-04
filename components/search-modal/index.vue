@@ -17,6 +17,7 @@
               placeholder="请输入关键词"
               class="search-modal"
               size="large"
+              v-model="keywords"
               @search="onSearch"
             />
           </div>
@@ -59,7 +60,9 @@ export default {
     visible: Boolean,
   },
   data() {
-    return {};
+    return {
+      keywords: "",
+    };
   },
   computed: {},
   watch: {},
@@ -67,9 +70,19 @@ export default {
   mounted() {},
   updated() {},
   methods: {
-    onSearch() {},
+    onSearch() {
+      if (this.keywords) {
+        let xtbl = this.$router.resolve({
+          name: "search-kws",
+          params: { kws: this.keywords },
+        });
+        window.open(xtbl.href, "_blank");
+        this.onCloseModal();
+      }
+    },
     onCloseModal() {
       this.$emit("change", false);
+      this.keywords = "";
     },
   },
 };

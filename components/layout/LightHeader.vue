@@ -2,7 +2,7 @@
   <div>
     <nav ref="navHead" class="navbar navbar-light navbar-expand-lg my-navbar">
       <div class="container">
-        <a class="navbar-brand" style="margin-right: 80px" href="#"
+        <a class="navbar-brand" style="margin-right: 80px" href="/"
           ><span
             style="transform: translateY(-3px); display: block; color: #fff"
             >FALCON</span

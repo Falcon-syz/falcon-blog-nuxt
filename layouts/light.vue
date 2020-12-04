@@ -2,11 +2,11 @@
   <div>
     <LightHeader></LightHeader>
     <div class="container">
-      <a-row :gutter="{ lg: 30, xs: 0 }">
-        <a-col :lg="{ span: 18 }" :xs="{ span: 24 }">
+      <a-row :gutter="{ lg: $route.query.tp?30:0, xs: 0 }">
+        <a-col :lg="{ span: $route.query.tp?18:24 }" :xs="{ span: 24 }">
           <Nuxt ref="nuxtComponent" />
         </a-col>
-        <a-col :lg="{ span: 6 }" :xs="{ span: 0 }">
+        <a-col :lg="{ span: $route.query.tp?6:0 }" :xs="{ span: 0 }">
           <div
             style="padding: 40px 0 20px 0"
             :class="{ 'scroll-fix-top': isFixed }"
@@ -24,7 +24,7 @@
       </a-row>
     </div>
     <Footer></Footer>
-    <div class="my-fixed">
+    <div class="my-fixed" v-if="$route.query.tp">
       <a-badge :count="likeCount" class="hiden">
         <a-tooltip placement="left">
           <template slot="title">
@@ -74,8 +74,8 @@ export default {
     };
   },
   mounted() {
-    // console.log(this.$refs['nuxtComponent'].$children[0].data.like)
-    this.likeCount = this.$refs["nuxtComponent"].$children[0].data.like;
+    console.log(this.$refs['nuxtComponent'].$children[0])
+    this.likeCount = this.$refs["nuxtComponent"].$children[0].data?this.$refs["nuxtComponent"].$children[0].data.like:0;
     window.addEventListener("scroll", this.handleScroll, true);
   },
   methods: {
