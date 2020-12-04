@@ -60,7 +60,7 @@
           <div class="nav-right">
             <a-tooltip placement="bottom">
               <template slot="title"> 搜索 </template>
-              <a-icon type="search" style="margin-right: 1rem" />
+              <a-icon type="search" style="margin-right: 1rem" @click="isShowSreachModal=true"/>
             </a-tooltip>
             <a-tooltip placement="bottom">
               <template slot="title"> 最近搜索记录 </template>
@@ -71,7 +71,7 @@
       </div>
     </nav>
     <div class="top-bac"></div>
-    <SearchModal></SearchModal>
+    <SearchModal v-model="isShowSreachModal"></SearchModal>
   </div>
 </template>
 
@@ -107,6 +107,7 @@ export default {
   props: {},
   data() {
     return {
+      isShowSreachModal:false,
       isScroll: false,
       navHeight: 0,
     };
