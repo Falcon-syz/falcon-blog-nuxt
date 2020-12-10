@@ -1,5 +1,8 @@
 <template>
   <div>
+    <!--此图片必须放在body标签的最前面，且高度必须为屏幕宽度的80%,微信链接缩略图  -->
+	<img src="../assets/img/wechat-small.jpg" style="position:absolute; top:0; left:0;  width: 80%; z-index:-1;opacity: 0; ">
+
     <Header ref="header"></Header>
       <Nuxt :style="{paddingTop:navHeight+'px'}"/>
     <Footer></Footer>
