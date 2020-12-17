@@ -57,7 +57,27 @@
     <a-row>
       <a-col>
         <div class="container">
-          Copyright © 2020 孙亚铮的独立博客. 豫ICP备20007499号
+          Copyright © 2020 孙亚铮的独立博客.
+           <a  style="
+                display: inline-block;
+                text-decoration: none;
+                height: 20px;
+                line-height: 20px;
+                color: rgb(109, 118, 133);
+              " href=http://beian.miit.gov.cn/ target=_blank>豫ICP备20007499号</a>
+            <a
+              target="_blank"
+              href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000241"
+              style="
+                display: inline-block;
+                text-decoration: none;
+                height: 20px;
+                line-height: 20px;
+                color: rgb(109, 118, 133);
+              "
+              >&nbsp;&nbsp;<img src="@/assets/img/peian.png"/>
+                豫公网安备 41030502000241号
+             </a>
         </div>
       </a-col>
     </a-row>
