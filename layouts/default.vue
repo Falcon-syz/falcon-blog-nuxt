@@ -4,7 +4,7 @@
 	<img src="../assets/img/wechat-small.jpg" style="position:absolute; top:0; left:0;  width: 80%; z-index:-1;opacity: 0; ">
 
     <Header ref="header"></Header>
-      <Nuxt :style="{paddingTop:navHeight+'px'}"/>
+      <Nuxt :style="{paddingTop:'91px'}"/>
     <Footer></Footer>
     <a-back-top>
       <div class="ant-back-top-inner">UP</div>
@@ -31,7 +31,8 @@ export default {
     }
   },
   mounted() {
-    this.navHeight = this.$refs['header'].$refs["navHead"].offsetHeight
+    // this.navHeight = this.$refs['header'].$refs["navHead"].offsetHeight
+    // console.log("🚀 ~ file: default.vue ~ line 35 ~ mounted ~ navHeight", this.navHeight)
   },
 };
 </script>

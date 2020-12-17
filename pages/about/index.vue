@@ -1,5 +1,8 @@
 <template>
-  <div>about</div>
+  <div>
+    <a-skeleton avatar :paragraph="{ rows: 4 }" active />
+    开发中
+  </div>
 </template>
 
 <script>

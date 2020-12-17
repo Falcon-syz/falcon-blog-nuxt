@@ -35,7 +35,8 @@
               <a class="nav-link" href="#">留言</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="#">关于</a>
+               <nuxt-link class="nav-link" to="/about">关于</nuxt-link>
+              <!-- <a class="nav-link" href="#">关于</a> -->
             </li>
             <li class="nav-item dropdown">
               <a
