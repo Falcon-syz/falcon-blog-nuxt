@@ -42,7 +42,7 @@
               <h6 class="title-bar m-t20">导航</h6>
               <p style="font-size: 0.875rem">
                 <a
-                  href="https://www.antdv.com"
+                  href="http://blog.sunyazheng.com/"
                   target="_blank"
                   class="link-style"
                   >老版本入口</a

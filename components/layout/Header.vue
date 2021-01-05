@@ -26,36 +26,14 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active mx-3">
-              <a class="nav-link" href="#"
-                >博客 <span class="sr-only">(current)</span></a
-              >
+            <li class="nav-item  mx-3" :class="{active:$route.path==='/'}">
+              <nuxt-link class="nav-link" to="/">博客</nuxt-link>
             </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="#">留言</a>
+            <li class="nav-item mx-3" :class="{active:$route.path==='/leave-message'}">
+              <nuxt-link class="nav-link" to="/leave-message">留言</nuxt-link>
             </li>
-            <li class="nav-item mx-3">
-               <nuxt-link class="nav-link" to="/about">关于</nuxt-link>
-              <!-- <a class="nav-link" href="#">关于</a> -->
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+            <li class="nav-item mx-3" :class="{active:$route.path==='/about'}">
+              <nuxt-link class="nav-link" to="/about">关于</nuxt-link>
             </li>
           </ul>
           <div class="nav-right">
@@ -119,6 +97,7 @@ export default {
   mounted() {
     this.navHeight = this.$refs["navHead"].offsetHeight;
     window.addEventListener("scroll", this.handleScroll);
+    console.log(this.$route)
   },
   updated() {},
   destroyed() {

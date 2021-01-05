@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <a-skeleton avatar :paragraph="{ rows: 4 }" active />
-    开发中
+  <div class="container">
+      <a-skeleton :paragraph="{ rows: 20 }" active v-show="isShowSkeleton" />
+      开发中
   </div>
 </template>
 
@@ -10,12 +10,19 @@ export default {
   components: {},
   props: {},
   data() {
-    return {};
+    return {
+      isShowSkeleton: false,
+    };
   },
   computed: {},
   watch: {},
   created() {},
-  mounted() {},
+  mounted() {
+    this.isShowSkeleton = true;
+    setTimeout(() => {
+      this.isShowSkeleton = false;
+    }, 500);
+  },
   updated() {},
   methods: {},
 };

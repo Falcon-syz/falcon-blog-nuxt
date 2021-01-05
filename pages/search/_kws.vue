@@ -1,6 +1,9 @@
 <template>
   <div>
     <div class="container" style="padding: 40px 0">
+      <a-row>
+        <h4>搜索：<span class="barBefore">{{$route.params.kws}}</span></h4>
+      </a-row>
       <a-row :gutter="{ xs: 8, lg: 20 }" style="margin-bottom: 10px">
         <a-col
           :xs="{ span: 12 }"
@@ -60,7 +63,8 @@ export default {
   computed: {},
   watch: {},
   created() {},
-  mounted() {},
+  mounted() {
+  },
   updated() {},
   methods: {
     itemRender(current, type, originalElement) {
@@ -89,7 +93,19 @@ export default {
     top: 60px !important;
   }
 }
-
+.barBefore{
+  position: relative;
+  &::before{
+    content: '';
+    width:3px;
+    height: 60%;
+    border-radius: 10px;
+    background: rgb(240, 70, 63);
+    position:absolute;
+    left:-7px;
+    top:9px;
+  }
+}
 .pic-card-icon {
   background: rgba(77, 78, 80, 0.692);
   width: 50px;

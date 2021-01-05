@@ -18,7 +18,6 @@ export default {
       page: 1,
       pageSize: 16,
     });
-
     return { archiveList, articleList };
   },
 };
