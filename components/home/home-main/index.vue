@@ -20,7 +20,7 @@
             >
               <img
                 class="hoverZoom"
-                src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3655212573,3518083758&fm=26&gp=0.jpg"
+                src="https://images.unsplash.com/photo-1614607660006-945b019c188a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                 alt=""
               />
                </nuxt-link>
@@ -50,7 +50,7 @@
                 <a-icon type="picture" theme="filled"/>
               </div>
               <img
-                src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2330346801,1817524984&fm=26&gp=0.jpg"
+                src="https://images.unsplash.com/photo-1574694667333-4030c0d05c35?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
                 class="card-img-top coverHover"
                 alt="..."
               />

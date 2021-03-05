@@ -132,7 +132,7 @@ export default {
     // 通过文章id查询所有评论列表信息
     // const {data: commentList} = await app.$getCommentListByArticleId(params.id)
     // return { data, commentList }
-    data.cover = "https://static.is26.com/blog/2020/07/tibet/t-135.JPG";
+    data.cover = "https://images.unsplash.com/photo-1529556253689-cf147e0fb3d9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80";
     return { data };
   },
 };
