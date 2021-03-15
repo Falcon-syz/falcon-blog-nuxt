@@ -9,6 +9,9 @@ export default ({ $axios }, inject) => {
     // 文章详情接口
     inject('detailsArticle', id => $axios.$get(`/article/api/article/details/${id}`))
 
-     // 浏览文章接口
-     inject('updateArticleViewCount', id => $axios.$get(`/article/api/article/update/view/${id}`))
+    // 浏览文章接口
+    inject('updateArticleViewCount', id => $axios.$get(`/article/api/article/update/view/${id}`))
+
+    // 关于接口
+    inject('about', () => $axios.$get('/about'))
 }
