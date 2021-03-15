@@ -25,7 +25,7 @@
         </div>
       </a-col>
     </a-row>
-    <SubmitMsg style="margin-top:120px"></SubmitMsg>
+    <SubmitMsg style="margin-top: 120px"></SubmitMsg>
   </div>
 </template>
 
@@ -74,7 +74,7 @@ export default {
   .msgListItem {
     cursor: pointer;
     &:hover {
-      background: rgba(255, 255, 255, 0.863);
+      background: rgba(0, 0, 0, 0.7);
       // box-shadow: 0 0 30px rgba(255, 221, 10, 0.562);
     }
     transition: all 0.5s;
@@ -84,20 +84,20 @@ export default {
     justify-content: space-between;
     line-height: 30px;
     // color: rgba(255, 255, 255, 0.788);
-    color:rgba(0, 0, 0, 0.75);
-    font-weight: bold;
-    background: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.75);
+    background: rgba(0, 0, 0, 0.15);
     padding: 10px 16px;
     .itemHeader {
       flex: 1;
       .itemAvatar {
-        margin-bottom: 10px;
         text-align: center;
+        font-weight: bold;
       }
       .itemTime {
         text-align: center;
         font-size: 8px;
         line-height: 12px;
+        font-weight: bold;
       }
     }
     .itemFooter {
