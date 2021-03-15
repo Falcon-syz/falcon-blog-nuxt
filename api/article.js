@@ -14,4 +14,7 @@ export default ({ $axios }, inject) => {
 
     // 关于接口
     inject('about', () => $axios.$get('/about'))
+
+    // 获取留言接口
+    inject('massage', params => $axios.$post('/massage',params))
 }
