@@ -1,6 +1,10 @@
 <template>
   <div class="submitContainer">
-    12
+    <div class="sTitle">留言<span class="sDesc">（已有825条留言）</span></div>
+    <div class="textAreaBox">
+      <a-icon type="edit" style="transform:translateY(-2px);margin-right:5px"/>写点东西吧...
+      <a-icon type="smile" style="float:right;cursor:pointer"/>
+    </div>
   </div>
 </template>
 
@@ -23,7 +27,25 @@ export default {
 </script>
 
 <style scoped>
-.submitContainer{
-    background: #fff;
+.textAreaBox{
+  border-radius: 5px;
+  background: rgb(57, 57, 57);
+  color: rgb(106, 106, 106);
+  width: 100%;
+  height:80px;
+  position: relative;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.sTitle{
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(188, 188, 188);
+  margin: 20px 0;
+}
+.sDesc{
+  font-size: 12px;
+  color: rgb(106, 106, 106);
 }
 </style>
