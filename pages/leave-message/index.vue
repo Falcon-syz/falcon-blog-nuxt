@@ -2,15 +2,15 @@
   <div class="box">
     <a-row>
       <a-col :xs="{ span: 22, offset: 1 }" :lg="{ span: 12, offset: 6 }">
-        <div style="padding-top: 60px">
-          <a-row :gutter="10">
-            <a-col :xs="{ span: 24 }" :lg="{ span: 12 }">
+        <div style="padding-top: 60px;">
+          <a-row>
+            <a-col :xs="{ span: 22,offset:1 }" :lg="{ span: 9 }">
               <Record></Record>
             </a-col>
             <a-col :xs="{ span: 24 }" :lg="{ span: 12 }"> 5555 </a-col>
           </a-row>
         </div>
-        <SubmitMsg></SubmitMsg>
+        <SubmitMsg style="margin-top:40px"></SubmitMsg>
         <div class="msgListContainer">
           <div
             class="msgListItem"
