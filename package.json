@@ -12,7 +12,8 @@
     "@nuxtjs/axios": "^5.12.2",
     "ant-design-vue": "^1.6.5",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "vue-clipboard2": "^0.3.1"
   },
   "devDependencies": {
     "less": "^3.12.2",

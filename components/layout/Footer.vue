@@ -8,18 +8,19 @@
             2020年洛阳师范学院毕业，前端程序员。干饭能手。没在好大的公司任过职。博客更新全凭心情。没有多大抱负。安心做条咸鱼。<br />
             <span class="icon-link">
               <a
-                href="https://www.antdv.com"
+                href="https://github.com/Falcon-syz"
                 class="link-style"
                 target="_blank"
               >
                 <a-icon type="github"
               /></a>
-              <a href="https://www.antdv.com" class="link-style" target="_blank"
-                ><a-icon type="weibo-circle"
-              /></a>
-              <a href="https://www.antdv.com" class="link-style" target="_blank"
+              <a href="javascript:;" @click="copy('QQ','526203396')" class="link-style"
+                ><a-icon type="qq" /></a>
+              <a href="javascript:;" @click="copy('微信','mockingbird_9527')" class="link-style"
                 ><a-icon type="wechat"
               /></a>
+               <a href="javascript:;" @click="copy('邮箱','sunyzh9527@sina.com')" class="link-style"
+                ><a-icon theme="filled" type="mail" /></a>
             </span>
           </p>
         </a-col>
@@ -95,20 +96,12 @@ export default {
     return {
       linkList: [
         {
-          name: "YouTube",
-          url: "https://www.antdv.com",
-        },
-        {
-          name: "哔哩哔哩",
-          url: "https://www.antdv.com",
-        },
-        {
-          name: "Instagram",
-          url: "https://www.antdv.com",
+          name: "GitHub",
+          url: "https://github.com/Falcon-syz",
         },
         {
           name: "新浪微博",
-          url: "https://www.antdv.com",
+          url: "https://weibo.com/u/1868311632",
         },
       ],
     };
@@ -118,11 +111,34 @@ export default {
   created() {},
   mounted() {},
   updated() {},
-  methods: {},
+  methods: {
+    copy(name,val) {
+      this.$copyText(val).then(
+        () => {
+          // 成功回调
+          this.$notification.open({
+            message: `复制${name}成功`,
+            description: "Thanks ;)",
+            icon: <a-icon type="smile" style="color: #108ee9" />,
+          });
+        },
+        () => {
+          // 失败回调
+          this.$notification.error({
+            message: `复制${name}失败啦`,
+            description: "不妨再试试？",
+          });
+        }
+      );
+    },
+  },
 };
 </script>
 
 <style scoped lang="less">
+/deep/.ant-notification{
+  z-index:1031
+}
 /deep/.ant-divider {
   background: rgb(35, 42, 49);
 }

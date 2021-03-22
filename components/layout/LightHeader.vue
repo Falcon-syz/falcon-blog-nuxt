@@ -23,20 +23,42 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item  mx-3" :class="{active:$route.path==='/'}">
+            <li class="nav-item mx-3" :class="{ active: $route.path === '/' }">
               <nuxt-link class="nav-link" to="/">博客</nuxt-link>
             </li>
-           <li class="nav-item mx-3" :class="{active:$route.path==='/leave-message'}">
+            <li
+              class="nav-item mx-3"
+              :class="{ active: $route.path === '/leave-message' }"
+            >
               <nuxt-link class="nav-link" to="/leave-message">留言</nuxt-link>
             </li>
-            <li class="nav-item mx-3" :class="{active:$route.path==='/about'}">
+            <li
+              class="nav-item mx-3"
+              :class="{ active: $route.path === '/catalog' }"
+            >
+              <nuxt-link class="nav-link" to="/catalog">归档</nuxt-link>
+            </li>
+            <li
+              class="nav-item mx-3"
+              :class="{ active: $route.path === '/about' }"
+            >
               <nuxt-link class="nav-link" to="/about">关于</nuxt-link>
+            </li>
+            <li
+              class="nav-item mx-3"
+              :class="{ active: $route.path === '/show' }"
+            >
+              <nuxt-link class="nav-link" to="/show">展示</nuxt-link>
             </li>
           </ul>
           <div class="nav-right">
             <a-tooltip placement="bottom">
               <template slot="title"> 搜索 </template>
-              <a-icon type="search" style="margin-right: 1rem" @click="isShowSreachModal=true"/>
+              <a-icon
+                type="search"
+                style="margin-right: 1rem"
+                @click="isShowSreachModal = true"
+              />
             </a-tooltip>
             <a-tooltip placement="bottom">
               <template slot="title"> 最近搜索记录 </template>
