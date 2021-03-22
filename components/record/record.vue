@@ -84,7 +84,7 @@ export default {
 .r_name {
   padding: 10px 0;
   font-family: "logoFont";
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   transform: translateY(10px);
 }
@@ -114,6 +114,6 @@ export default {
   height: 390px;
   background: rgb(109, 118, 133);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(185, 198, 211, 0.534);
+  box-shadow: 0 0 10px rgba(185, 198, 211, 0.397);
 }
 </style>
